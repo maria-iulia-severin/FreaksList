@@ -8,21 +8,26 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.freakslist.R
 import com.example.freakslist.ui.theme.AgileBlue
 import com.example.freakslist.ui.theme.AgileGray
+import com.example.freakslist.ui.theme.Nunito
 
 @Composable
 fun FreakItem(name: String, imageResource: Int) {
 
     Row(modifier = Modifier.padding(
         horizontal = 16.dp,
-        vertical = 24.dp)
+        vertical = 24.dp),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         Image(
             painter = painterResource(imageResource),
@@ -43,11 +48,12 @@ fun FreakItem(name: String, imageResource: Int) {
             style = TextStyle(
                 color = AgileGray,
                 fontSize = 16.sp,
-                // fontFamily = FontFamily.Monospace,
-                fontWeight = FontWeight.W600,
-                //  fontStyle = FontStyle.normal,
-                // lineHeightStyle = 24.dp
-            )
+                //fontSize = getDimension(R.dimen.textsize_item),
+                fontFamily = Nunito,
+                fontWeight = FontWeight.SemiBold
+            ),
+
+
         )
     }
 }
