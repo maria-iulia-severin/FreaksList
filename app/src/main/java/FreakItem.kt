@@ -15,7 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.freakslist.ui.theme.AgileBlue
-import com.example.freakslist.ui.theme.TextColor
+import com.example.freakslist.ui.theme.AgileGray
 
 @Composable
 fun FreakItem(name: String, imageResource: Int) {
@@ -41,7 +41,7 @@ fun FreakItem(name: String, imageResource: Int) {
         Text(
             text = name,
             style = TextStyle(
-                color = TextColor,
+                color = AgileGray,
                 fontSize = 16.sp,
                 // fontFamily = FontFamily.Monospace,
                 fontWeight = FontWeight.W600,

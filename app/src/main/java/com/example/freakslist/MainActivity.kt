@@ -36,6 +36,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.freakslist.ui.theme.AgileBlue
+import com.example.freakslist.ui.theme.AgileGray
 import com.example.freakslist.ui.theme.FreaksListTheme
 
 class MainActivity : ComponentActivity() {
@@ -56,7 +58,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(
                     topBar = {
                         TopAppBar(
-                            title = { Text(text = "Freaks List", color = Color.Blue)},
+                            title = { Text(text = "Freaks List", color = AgileGray)},
                             backgroundColor = Color.White
                         )
                     },
@@ -64,13 +66,13 @@ class MainActivity : ComponentActivity() {
                     BottomNavigationBar(
                         items = listOf(
                             BottomNavItem(
-                                name = "Home", route = "home", icon = R.drawable.ic_dashboard
+                                name = "Home", route = "home", icon = R.drawable.ic_home
                             ),
                             BottomNavItem(
-                                name = "Chat", route = "chat", icon = R.drawable.ic_dashboard
+                                name = "Freaks", route = "freaks", icon = R.drawable.ic_dashboard
                             ),
                             BottomNavItem(
-                                name = "Settings", route = "settings", icon = R.drawable.ic_dashboard
+                                name = "Profile", route = "profile", icon = R.drawable.ic_profile
                             )
                         ),
                         navController = navController,
@@ -99,8 +101,8 @@ fun Navigation(navController: NavHostController, paddingValues: PaddingValues) {
     NavHost(navController = navController, startDestination = "home", modifier = Modifier.padding(paddingValues)) {
         //ce avem intre curly breckets reprezinta screen ul nostru, iar ce avem intre ghilimele este ROUTE ul
         composable("home") { HomeScreen() }
-        composable("chat") { FreaksList() }
-        composable("settings") { SettingsScreen() }
+        composable("freaks") { FreaksList() }
+        composable("profile") { ProfileScreen() }
     }
 }
 
@@ -122,7 +124,7 @@ fun BottomNavigationBar(
 ) {
 // observe the current state and catch it into this val
     val backStackEntry = navController.currentBackStackEntryAsState()
-    BottomNavigation(modifier = modifier, backgroundColor = Color.DarkGray, elevation = 5.dp) {
+    BottomNavigation(modifier = modifier, backgroundColor = Color.White, elevation = 5.dp) {
         //display specific item of our buttomNav view
         //we need one item for each ellement in our list
         items.forEach { item ->
@@ -130,8 +132,8 @@ fun BottomNavigationBar(
             val selected = item.route == backStackEntry.value?.destination?.route
             BottomNavigationItem(selected = selected,
                 onClick = { onItemClick(item) },
-                selectedContentColor = Color.Green,
-                unselectedContentColor = Color.Gray,
+                selectedContentColor = AgileBlue,
+                unselectedContentColor = AgileGray,
                 //creez un column pt ca icon si text stau unul sub altul
                 icon = {
                     Column(horizontalAlignment = CenterHorizontally) {
@@ -139,7 +141,7 @@ fun BottomNavigationBar(
                             imageVector = ImageVector.vectorResource(id = item.icon), contentDescription = item.name
                         )
                         Text(
-                            text = item.name, textAlign = TextAlign.Center, fontSize = 10.sp
+                            text = item.name, textAlign = TextAlign.Center, fontSize = 10.sp, color = if(selected) AgileBlue else AgileGray
                         )
                     }
 
@@ -158,11 +160,11 @@ fun HomeScreen() {
 }
 
 @Composable
-fun SettingsScreen() {
+fun ProfileScreen() {
     Box(
         modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center
     ) {
-        Text(text = "Sett screen")
+        Text(text = "Profile screen")
     }
 }
 

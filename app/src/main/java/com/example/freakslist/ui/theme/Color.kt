@@ -11,4 +11,4 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 val AgileBlue = Color (0xFF4480F1)
-val TextColor = Color (0xFF6C717F)
+val AgileGray = Color (0xFF6C717F)
