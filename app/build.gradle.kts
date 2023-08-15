@@ -40,7 +40,8 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        //kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.5.1"
     }
     packaging {
         resources {
@@ -50,7 +51,8 @@ android {
 }
 
 dependencies {
-    implementation("androidx.navigation:navigation-compose:2.4.0")
+    implementation("androidx.compose.material:material:1.5.0")
+    implementation("androidx.navigation:navigation-compose:2.4.0-alpha06")
     implementation("io.coil-kt:coil:2.4.0")
     implementation("io.coil-kt:coil-compose:2.4.0")
     implementation("androidx.core:core-ktx:1.9.0")
