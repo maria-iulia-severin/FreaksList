@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.freakslist"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.freakslist"
@@ -50,7 +50,7 @@ android {
 }
 
 dependencies {
-    implementation ("androidx.navigation:navigation-compose:2.4.0")
+    implementation("androidx.navigation:navigation-compose:2.4.0")
     implementation("io.coil-kt:coil:2.4.0")
     implementation("io.coil-kt:coil-compose:2.4.0")
     implementation("androidx.core:core-ktx:1.9.0")
