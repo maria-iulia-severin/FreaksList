@@ -41,7 +41,9 @@ class MainActivity : ComponentActivity() {
                         TopAppBar(
                             title = {
                                 Text(
-                                    text = getString(R.string.top_bar_name), color = AgileGray, fontFamily = Nunito,
+                                    text = getString(R.string.top_bar_name),
+                                    color = AgileGray,
+                                    fontFamily = Nunito,
                                     fontWeight = FontWeight.SemiBold
                                 )
                             },
